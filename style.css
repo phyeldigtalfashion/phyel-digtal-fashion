@@ -1,0 +1,262 @@
+/* 瑞士国际主义风格 (Swiss International Typographic Style) */
+:root {
+    --bg-black: #0B0B0C;
+    --text-white: #F4F4F0;
+    --gray-border: #27272A;
+    --gray-bg: #141416;
+    --klein-blue: #002FA7;
+    --vermillion: #FF3B00;
+    --font-mono: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-black);
+    color: var(--text-white);
+    font-family: var(--font-mono);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Top Bar */
+.top-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 50px;
+    background: rgba(11, 11, 12, 0.9);
+    border-bottom: 1px solid var(--gray-border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    z-index: 1000;
+    backdrop-filter: blur(8px);
+}
+
+.brand-logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+.phi-symbol {
+    color: var(--vermillion);
+    font-size: 1.2rem;
+}
+
+.world-clocks {
+    display: flex;
+    gap: 20px;
+    font-size: 0.75rem;
+    color: #888;
+}
+
+.lang-switch .lang-btn {
+    background: transparent;
+    border: 1px solid var(--gray-border);
+    color: #888;
+    padding: 4px 8px;
+    cursor: pointer;
+    font-size: 0.7rem;
+}
+
+.lang-switch .lang-btn.active {
+    background: var(--text-white);
+    color: var(--bg-black);
+    border-color: var(--text-white);
+}
+
+/* Sidebar */
+.sidebar-nav {
+    position: fixed;
+    top: 50px;
+    left: 0;
+    bottom: 0;
+    width: 220px;
+    border-right: 1px solid var(--gray-border);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    overflow-y: auto;
+}
+
+.sidebar-nav a {
+    color: #888;
+    text-decoration: none;
+    font-size: 0.8rem;
+    display: flex;
+    gap: 10px;
+}
+
+.sidebar-nav a:hover {
+    color: var(--text-white);
+}
+
+.sidebar-nav b {
+    color: var(--vermillion);
+}
+
+/* Main Content */
+.main-content {
+    margin-top: 50px;
+    margin-left: 220px;
+    padding: 40px;
+    flex: 1;
+}
+
+.hero-section {
+    padding: 60px 0;
+    border-bottom: 1px solid var(--gray-border);
+}
+
+.meta-tag {
+    color: var(--klein-blue);
+    font-size: 0.75rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.hero-title {
+    font-size: 2.8rem;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    max-width: 800px;
+}
+
+.hero-subtitle {
+    color: #aaa;
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin-bottom: 30px;
+}
+
+.btn {
+    padding: 12px 24px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-primary {
+    background: var(--text-white);
+    color: var(--bg-black);
+}
+
+.btn-secondary {
+    background: transparent;
+    border: 1px solid var(--text-white);
+    color: var(--text-white);
+    margin-left: 10px;
+}
+
+/* Sections */
+.section-block {
+    padding: 60px 0;
+    border-bottom: 1px solid var(--gray-border);
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 30px;
+}
+
+.color-matrix-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.color-card {
+    background: var(--gray-bg);
+    padding: 15px;
+    font-size: 0.8rem;
+}
+
+.swatch {
+    height: 80px;
+    margin-bottom: 10px;
+}
+
+/* Canvas */
+.canvas-wrapper {
+    position: relative;
+    background: var(--gray-bg);
+    border: 1px solid var(--gray-border);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.canvas-overlay-data {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    display: flex;
+    gap: 20px;
+    font-size: 0.7rem;
+    color: #666;
+}
+
+.mode-btn {
+    background: transparent;
+    border: 1px solid var(--gray-border);
+    color: var(--text-white);
+    padding: 6px 12px;
+    cursor: pointer;
+}
+
+.mode-btn.active {
+    background: var(--klein-blue);
+    border-color: var(--klein-blue);
+}
+
+/* Ticket */
+.ticket-card {
+    background: var(--text-white);
+    color: var(--bg-black);
+    width: 320px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.ticket-head {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    border-bottom: 2px solid var(--bg-black);
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.ticket-body input {
+    width: 100%;
+    padding: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    border: 1px solid #ccc;
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+.ticket-barcode {
+    font-family: monospace;
+    letter-spacing: 4px;
+    text-align: center;
+    margin-top: 15px;
+    font-weight: bold;
+}
